@@ -1,0 +1,32 @@
+<!--<ul>
+  <li *ngFor="let client of listData; let i = index">
+    {{ client.first_name }}
+  </li>
+</ul> -->
+
+<nz-table #basicTable [nzData]="listData">
+  <thead>
+    <tr>
+      <th
+        *ngFor="let column of listOfColumns"
+        [nzSortOrder]="column.sortOrder"
+        [nzSortFn]="column.sortFn"
+        [nzSortDirections]="column.sortDirections"
+        [nzFilterMultiple]="column.filterMultiple"
+        [nzFilters]="column.listOfFilter"
+        [nzFilterFn]="column.filterFn"
+      >
+        {{ column.name }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.first_name }}</td>
+      <td>{{ data.last_name }}</td>
+      <td>{{ data.job_title }}</td>
+      <td>{{ booleanConverterService.getYesNoVal(data.codeclan_graduate) }}</td>
+      <td>{{ data.gender }}</td>
+    </tr>
+  </tbody>
+</nz-table>

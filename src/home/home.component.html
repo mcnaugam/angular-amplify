@@ -1,0 +1,25 @@
+<nz-layout class="layout ant-layout">
+  <nz-header class="ant-layout-header">
+    <div class="logo"></div>
+    <ul
+      nz-menu
+      nzTheme="dark"
+      nzMode="horizontal"
+      class="ant-menu ant-menu-root ant-menu-dark ant-menu-horizontal"
+    >
+      <li nz-menu-item class="ant-menu-item">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li nz-menu-item class="ant-menu-item">
+        <a routerLink="clients" routerLinkActive="active">Clients</a>
+      </li>
+      <li nz-menu-item class="ant-menu-item">
+        <a routerLink="employees" routerLinkActive="active">Employees</a>
+      </li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content"><router-outlet></router-outlet></div>
+  </nz-content>
+  <nz-footer class="ant-layout-footer">@Andrew McNaught</nz-footer>
+</nz-layout>
